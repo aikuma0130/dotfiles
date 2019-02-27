@@ -1,0 +1,46 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Syntax checker
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = 'source ~/.config/nvim/bundles/plugins/ale_settings.vim'
+
+# statusline plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = 'source ~/.config/nvim/bundles/plugins/statusline_settings.vim'
+
+# 非同期処理全般
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+# colorschema
+[[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme'
+hook_add = 'source ~/.config/nvim/bundles/plugins/vim-tomorrow-theme_settings.vim'
+
+# インデントを可視化
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# 無駄な空白をハイライト
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# j, k移動高速化
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+hook_add = 'source ~/.config/nvim/bundles/plugins/accelerated-jk_settings.vim'
+
+# /検索強化
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = 'source ~/.config/nvim/bundles/plugins/vim-anzu_settings.vim'
+
+# f検索強化
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
