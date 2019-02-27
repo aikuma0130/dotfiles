@@ -4,8 +4,8 @@
 # -u: パラメーター展開中に、設定していない変数があったらエラーとする
 set -eu
 
-if xcode-select --install; then
-  echo "xcode install done"
+if ! xcode-select --install; then
+  echo "Please Install xcode. After that, Please re-exec bootstrap.sh"
 fi
 
 DOTFILES=$HOME/dotfiles
