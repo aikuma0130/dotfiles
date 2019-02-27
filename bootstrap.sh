@@ -4,6 +4,10 @@
 # -u: パラメーター展開中に、設定していない変数があったらエラーとする
 set -eu
 
+if xcode-select --install; then
+  echo "xcode install done"
+fi
+
 DOTFILES=$HOME/dotfiles
 
 if [ ! -d "$DOTFILES" ]; then
