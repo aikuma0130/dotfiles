@@ -5,7 +5,12 @@
 set -eu
 
 if ! xcode-select --install; then
-  echo "Please Install xcode. After that, Please re-exec bootstrap.sh"
+    echo
+    echo "#############################################################"
+    echo "Please install Xcode."
+    echo "After that, Please re-exec bootstrap.sh"
+    echo "#############################################################"
+    echo
 fi
 
 DOTFILES=$HOME/dotfiles
