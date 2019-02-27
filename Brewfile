@@ -14,6 +14,7 @@ brew 'rbenv'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
 brew 'ndenv'
+brew 'neovim'
 
 cask 'postman'
 cask '1password'
