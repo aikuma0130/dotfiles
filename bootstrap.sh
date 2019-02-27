@@ -4,7 +4,7 @@
 # -u: パラメーター展開中に、設定していない変数があったらエラーとする
 set -eu
 
-if ! xcode-select --install; then
+if xcode-select --install; then
     echo
     echo "#############################################################"
     echo "Please install Xcode."

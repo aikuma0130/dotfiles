@@ -27,4 +27,4 @@ cask 'google-japanese-ime'
 # cask 'virtualbox'
 # cask 'visual-studio-code'
 
-mas 'Kindle', id: 405399194
+# mas 'Kindle', id: 405399194
