@@ -1,5 +1,5 @@
-let g:python_host_prog  = '/Users/bear/.pyenv/versions/py2neovim/bin/python'
-let g:python3_host_prog  = '/Users/bear/.pyenv/versions/py3neovim/bin/python'
+let g:python_host_prog  = expand('~/.pyenv/versions/py2neovim/bin/python2')
+let g:python3_host_prog  = expand('~/.pyenv/versions/hoge/bin/python3')
 
 runtime! bundles/dein/dein.vim
 
@@ -82,9 +82,15 @@ set showcmd
 " ◆や○文字が崩れる問題を解決"
 set ambiwidth=double
 
+let mapleader = "\<Space>"
+
 """"""""""""""""""
 " 操作関連
 """"""""""""""""""
+
+" 画面分割
+nnoremap <silent> <Leader>- :split<CR>
+nnoremap <silent> <Leader>v :vsplit<CR>
 
 " インサートモードでbackspaceを有効に
 set backspace=indent,eol,start
