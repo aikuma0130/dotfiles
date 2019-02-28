@@ -1,9 +1,7 @@
 # dotfiles
 
-The bootstrap scripts is assumed on running with OS-X.
-Only tested with macOS Mojave (version 10.14).
-
 ## Install
+The bootstrap scripts is assumed on running with OS-X. Only tested with macOS Mojave (version 10.14).
 
 ```
 bash -c "$(curl -L https://raw.githubusercontent.com/aikuma0130/dotfiles/master/bootstrap.sh)"
