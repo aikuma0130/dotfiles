@@ -1,5 +1,8 @@
 # dotfiles
 
+The bootstrap scripts is assumed on running with OS-X.
+Only tested with macOS Mojave (version 10.14).
+
 ## Install
 
 ```
