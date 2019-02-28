@@ -13,7 +13,7 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-source <(kubectl completion bash)
+#source <(kubectl completion bash)
 
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
