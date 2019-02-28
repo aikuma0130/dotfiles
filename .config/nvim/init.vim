@@ -1,5 +1,5 @@
-let g:python_host_prog  = expand('~/.pyenv/versions/py2neovim/bin/python2')
-let g:python3_host_prog  = expand('~/.pyenv/versions/hoge/bin/python3')
+" let g:python_host_prog  = expand('~/.pyenv/versions/py2neovim/bin/python2')
+" let g:python3_host_prog  = expand('~/.pyenv/versions/py3neovim/bin/python3')
 
 runtime! bundles/dein/dein.vim
 
