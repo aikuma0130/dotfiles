@@ -12,7 +12,7 @@
 #export PATH="$HOME/.rbenv/bin:$PATH"
 #if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
 
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 #source <(kubectl completion bash)
