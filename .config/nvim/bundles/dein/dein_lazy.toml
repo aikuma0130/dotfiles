@@ -4,10 +4,12 @@ repo = 'Shougo/deoplete.nvim'
 on_i = 1
 hook_add = '''
   let g:deoplete#enable_at_startup = 1
+  let g:deoplete#auto_completion_start_length = 1
   "Tab補完
-  inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
-        \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
+  imap <expr><TAB> pumvisible() ? "\<C-N>" : neosnippet#jumpable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  "Enterキーで確定
+  "inoremap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
+  imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
 '''
 
 # スニペット
