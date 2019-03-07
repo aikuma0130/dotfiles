@@ -1,17 +1,3 @@
-# コードの自動補完
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-on_i = 1
-hook_add = '''
-  let g:deoplete#enable_at_startup = 1
-  let g:deoplete#auto_completion_start_length = 1
-  "Tab補完
-  imap <expr><TAB> pumvisible() ? "\<C-N>" : neosnippet#jumpable() ?  "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-  "Enterキーで確定
-  "inoremap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-  imap <expr><CR> neosnippet#expandable() ? "<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "<C-y>" : "<CR>"
-'''
-
 # スニペット
 [[plugins]]
 repo = 'Shougo/neosnippet'
@@ -27,22 +13,6 @@ on_i  = 1
 on_ft = ['snippet']
 depends = ['neosnippet-snippets']
 
-# Rubyの自動補完
-[[plugins]]
-repo = 'fishbullet/deoplete-ruby'
-on_ft = ['ruby']
-
-[[plugins]]
-repo = 'osyo-manga/vim-monster'
-on_ft = ['ruby']
-hook_add = '''
-  " With deoplete.nvim
-  let g:monster#completion#rcodetools#backend = "async_rct_complete"
-  let g:deoplete#sources#omni#input_patterns = {
-  \   "ruby" : '[^. *\t]\.\w*\|\h\w*::',
-  \}
-'''
-
 # Rubyのend補完
 [[plugins]]
 repo = 'tpope/vim-endwise'
@@ -52,3 +22,16 @@ on_ft = ['ruby']
 # Rubyのメソッドの定義元にジャンプ
 [[plugins]]
 repo = 'szw/vim-tags'
+on_ft = ['ruby']
+hook_add = '''
+  let g:vim_tags_project_tags_command = "/usr/local/bin/ctags -f .tags -R . 2>/dev/null"
+  let g:vim_tags_gems_tags_command = "/usr/local/bin/ctags -R -f .Gemfile.lock.tags `bundle show --paths` 2>/dev/null"
+  set tags+=.tags
+  set tags+=.Gemfile.lock.tags
+'''
+
+# Rubyの自動補完
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+on_ft = ['ruby']
+
