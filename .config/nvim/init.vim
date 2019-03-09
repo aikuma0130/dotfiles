@@ -109,3 +109,11 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 syntax on
 
+set sh=bash
+tnoremap <silent> jj <C-\><C-n>
+
+nnoremap <silent> <Leader>t :call Term()<CR>
+function! Term()
+    :rightbelow split term://bash
+    :resize 15
+endfunction
