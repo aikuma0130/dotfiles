@@ -84,3 +84,6 @@ repo = 'tomtom/tcomment_vim'
 repo = 'scrooloose/nerdtree'
 hook_add = 'source ~/.config/nvim/bundles/plugins/nerdtree_settings.vim'
 
+# "や'などの囲み文字操作
+[[plugins]]
+repo = 'tpope/vim-surround'
