@@ -22,6 +22,10 @@ brew 'readline'
 brew 'xz'
 # brew 'ndenv'
 brew 'neovim'
+# for high speed grep in denite
+brew 'the_silver_searcher'
+# for gtags
+brew 'global'
 
 cask 'postman'
 cask '1password'

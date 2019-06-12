@@ -18,7 +18,13 @@ source ~/.bash_profile
 #pyenv global py2neovim
 pip install neovim
 
+# for gtags
+pip install pygments
+
 #pyenv global py3neovim
 pip3 install neovim
+
+# for gtags
+pip3 install pygments
 
 #pyenv global system

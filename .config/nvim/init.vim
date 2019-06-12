@@ -1,5 +1,14 @@
 runtime! bundles/dein/dein.vim
 
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" let g:node_host_prog = '/usr/local/lib/node_modules/neovim/bin/cli.js'
+let g:node_host_prog = '/usr/local/bin/node'
+
+let g:ruby_host_prog = '/usr/local//lib/ruby/gems/2.6.0/bin/neovim-ruby-host'
+
+
 """"""""""""""""""
 " 表示関連
 """"""""""""""""""
@@ -117,3 +126,25 @@ function! Term()
     :rightbelow split term://bash
     :resize 15
 endfunction
+
+" 指定のデータをレジスタに登録する
+function! s:Clip(data)
+  let @*=a:data
+  echo "clipped: " . a:data
+endfunction
+
+" 現在開いているファイルのパスをレジスタへ
+command! -nargs=0 ClipPath call s:Clip(expand('%:p'))
+" 現在開いているファイルのファイル名をレジスタへ
+command! -nargs=0 ClipFile call s:Clip(expand('%:t'))
+" 現在開いているファイルのディレクトリパスをレジスタへ
+command! -nargs=0 ClipDir  call s:Clip(expand('%:p:h'))
+
+function! s:deinClean()
+  if len(dein#check_clean())
+    call map(dein#check_clean(), 'delete(v:val, "rf")')
+  else
+    echo '[ERR] no disabled plugins'
+  endif
+endfunction
+command! DeinClean :call s:deinClean()

@@ -24,3 +24,7 @@ let g:NERDTreeIgnore=['\.git$', '\.clean$', '\.swp$', '\.bak$', '\~$']
 
 " NERDTreeを同時に閉じる
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+
+" マウスの有効化
+let g:NERDTreeMouseMode=3
+
