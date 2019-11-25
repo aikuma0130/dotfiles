@@ -8,6 +8,11 @@ let g:node_host_prog = '/usr/local/bin/node'
 
 let g:ruby_host_prog = '/usr/local//lib/ruby/gems/2.6.0/bin/neovim-ruby-host'
 
+"let g:swagger_preview_verbose_log = 1
+
+" ファイル一覧を出すときにプレビュー表示
+command! -bang -nargs=? -complete=dir Files
+\ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
 """"""""""""""""""
 " 表示関連
@@ -118,12 +123,12 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 syntax on
 
-set sh=bash
+set sh=zsh
 tnoremap <silent> jj <C-\><C-n>
 
 nnoremap <silent> <Leader>t :call Term()<CR>
 function! Term()
-    :rightbelow split term://bash
+    :rightbelow split term://zsh
     :resize 15
 endfunction
 
@@ -135,6 +140,8 @@ endfunction
 
 " 現在開いているファイルのパスをレジスタへ
 command! -nargs=0 ClipPath call s:Clip(expand('%:p'))
+" 現在開いているファイルのパスをecho
+command! -nargs=0 EchoPath echo expand('%:p')
 " 現在開いているファイルのファイル名をレジスタへ
 command! -nargs=0 ClipFile call s:Clip(expand('%:t'))
 " 現在開いているファイルのディレクトリパスをレジスタへ

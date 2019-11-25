@@ -22,11 +22,11 @@ hook_add = '''
 repo = 'ozelentok/denite-gtags'
 hook_add = 'source ~/.config/nvim/bundles/plugins/denite-gtags_settings.vim'
 
-#[[plugins]]
-#repo = 'jsfaint/gen_tags.vim'
-#hook_add = '''
-#    let g:gen_tags#gtags_auto_gen = 1
-#'''
+[[plugins]]
+repo = 'jsfaint/gen_tags.vim'
+hook_add = '''
+    let g:gen_tags#gtags_auto_gen = 1
+'''
 
 [[plugins]]
 repo = 'Shougo/neomru.vim'
@@ -110,3 +110,32 @@ hook_add = 'source ~/.config/nvim/bundles/plugins/nerdtree_settings.vim'
 # "や'などの囲み文字操作
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+# git
+[[plugins]]
+repo = "tpope/vim-fugitive"
+hook_add = 'source ~/.config/nvim/bundles/plugins/vim-fugitive_settings.vim'
+
+# open github with browser
+[[plugins]]
+repo = "tpope/vim-rhubarb"
+hook_add = 'source ~/.config/nvim/bundles/plugins/vim-rhubarb_settings.vim'
+
+# HEADからの差分を可視化
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "tyru/open-browser.vim"
+
+# Swagger-editor
+[[plugins]]
+repo = "xavierchow/vim-swagger-preview"
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+ 
+###fzf.vim
+[[plugins]]
+repo = 'junegunn/fzf.vim'

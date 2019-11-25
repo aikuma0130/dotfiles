@@ -26,6 +26,10 @@ brew 'neovim'
 brew 'the_silver_searcher'
 # for gtags
 brew 'global'
+# for plantuml-previewer.vim
+brew 'graphviz'
+brew 'plantuml'
+brew 'go-jira'
 
 cask 'postman'
 cask '1password'
@@ -35,8 +39,11 @@ cask 'docker'
 cask 'google-chrome'
 cask 'google-japanese-ime'
 cask 'google-cloud-sdk'
+cask 'iterm2'
+cask 'alfred'
 # cask 'ngrok'
 # cask 'virtualbox'
 # cask 'visual-studio-code'
+cask 'java'
 
 # mas 'Kindle', id: 405399194

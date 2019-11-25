@@ -1,0 +1,45 @@
+endpoint: https://jira.dena.jp/
+custom-commands:
+  - name: print-project
+    help: print the name of the configured project
+    script: "echo $JIRA_PROJECT"
+  - name: env
+    help: print the JIRA environment variables available to custom commands
+    script: |
+      env | grep JIRA
+  - name: sprint
+    help: display issues for active sprint
+    script: |-
+      if [ -n "$JIRA_PROJECT" ] && [ -n "$JIRA_USER" ]; then
+          # if `project: ...` configured just list the issues for current project
+          {{jira}} list --query "sprint in openSprints() and status in (Open, 'In Progress', Reopened, Resolved, Closed, Testing, 保留, Waiting, 'Waiting for Test') AND assignee in ($JIRA_USER) and project=$JIRA_PROJECT ORDER BY resolution desc, created asc"
+      else
+          # otherwise list issues for all project
+          echo "\"project: ...\" configuration missing from .jira.d/config.yml"
+      fi
+  - name: out-of-planning
+    help: out-of-planning
+    args:
+      - name: SPRINT_DATE
+        required: true
+    script: |-
+      if [ -n "$JIRA_PROJECT" ] && [ -n "$JIRA_USER" ]; then
+          # if `project: ...` configured just list the issues for current project
+          {{jira}} list --query "labels = {{ args.SPRINT_DATE }}.$(date +%Y) AND assignee in ($JIRA_USER) and project=$JIRA_PROJECT ORDER BY rank asc, created"
+      else
+          # otherwise list issues for all project
+          echo "\"project: ...\" configuration missing from .jira.d/config.yml"
+      fi
+  - name: test
+    help: test
+    args:
+      - name: SPRINT_DATE
+        required: true
+    script: |-
+      if [ -n "$JIRA_PROJECT" ] && [ -n "$JIRA_USER" ]; then
+          # if `project: ...` configured just list the issues for current project
+          {{jira}} list --template test --query "labels = {{ args.SPRINT_DATE }}.$(date +%Y) AND assignee in ($JIRA_USER) and project=$JIRA_PROJECT ORDER BY rank asc, created"
+      else
+          # otherwise list issues for all project
+          echo "\"project: ...\" configuration missing from .jira.d/config.yml"
+      fi

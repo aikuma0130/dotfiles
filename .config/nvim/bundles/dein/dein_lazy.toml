@@ -39,3 +39,13 @@ on_ft = ['ruby']
 [[plugins]]
 repo = 'Shougo/deoplete-rct'
 on_ft = ['ruby']
+
+# PlantUMLのSyntax
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = ['plantuml']
+hook_add = 'source ~/.config/nvim/bundles/plugins/plantuml-syntax_settings.vim'
+
+[[plugins]]
+repo = 'weirongxu/plantuml-previewer.vim'
+on_ft = ['plantuml']
