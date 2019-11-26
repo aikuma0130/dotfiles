@@ -28,3 +28,6 @@ pip3 install neovim
 pip3 install pygments
 
 #pyenv global system
+
+# for language server
+pip3 install python-language-server
