@@ -30,6 +30,7 @@ brew 'global'
 brew 'graphviz'
 brew 'plantuml'
 brew 'go-jira'
+brew 'fzf'
 
 cask 'postman'
 cask '1password'
