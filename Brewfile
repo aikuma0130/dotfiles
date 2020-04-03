@@ -32,8 +32,8 @@ brew 'plantuml'
 brew 'go-jira'
 brew 'fzf'
 # for k8s
-brew kube-ps1
-brew kubectx
+brew 'kube-ps1'
+brew 'kubectx'
 
 cask 'postman'
 cask '1password'
