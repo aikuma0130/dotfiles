@@ -40,12 +40,23 @@ on_ft = ['ruby']
 repo = 'Shougo/deoplete-rct'
 on_ft = ['ruby']
 
+# RSpec
+[[plugins]]
+repo = 'thoughtbot/vim-rspec'
+on_ft = ['ruby']
+hook_add = 'source ~/.config/nvim/bundles/plugins/vim-rspec_settings.vim'
+
 # PlantUMLのSyntax
 [[plugins]]
 repo = 'aklt/plantuml-syntax'
 on_ft = ['plantuml']
 hook_add = 'source ~/.config/nvim/bundles/plugins/plantuml-syntax_settings.vim'
 
+# [[plugins]]
+# repo = 'weirongxu/plantuml-previewer.vim'
+# on_ft = ['plantuml']
+
 [[plugins]]
-repo = 'weirongxu/plantuml-previewer.vim'
-on_ft = ['plantuml']
+repo = 'iamcco/markdown-preview.nvim'
+on_ft = ['plantuml', 'markdown']
+build = 'cd app && yarn install'

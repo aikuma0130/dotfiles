@@ -18,6 +18,8 @@ command! -bang -nargs=? -complete=dir Files
 " 表示関連
 """"""""""""""""""
 
+" statusline
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " 挿入モードでTABキーを押した際、対応する数のスペースを入力
 set expandtab
 " 画面上でタブ文字が占める幅の指定
